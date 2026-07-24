@@ -1,7 +1,5 @@
 # Student-Grade-Calculator
 
-# Student Grade Calculator
-
 A Python mini-project that calculates a student's overall academic performance.
 
 ## Features
