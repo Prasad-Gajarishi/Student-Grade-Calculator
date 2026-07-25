@@ -37,35 +37,30 @@ while True:
     subject4 = get_valid_marks("History")
     subject5 = get_valid_marks("Geography")
 
+    subjects = {
+        "Maths": subject1,
+        "Science": subject2,
+        "English": subject3,
+        "History": subject4,
+        "Geography": subject5,
+    }
+
     Total_marks = subject1 + subject2 + subject3 + subject4 + subject5
     Average_marks = Total_marks / 5
     print("Total Marks obtain by ",name,"in all subjects is:",Total_marks)
     Percentage = (Total_marks/500)*100
     print("Percentage of marks obtained by ",name,"is:",Percentage,"%")
-    Highest_marks = max(subject1, subject2, subject3, subject4, subject5)
-    if Highest_marks == subject1:
-        Highest_subject = "Maths"
-    elif Highest_marks == subject2:
-        Highest_subject = "Science"
-    elif Highest_marks == subject3:
-        Highest_subject = "English"
-    elif Highest_marks == subject4:
-        Highest_subject = "History"
-    else:
-        Highest_subject = "Geography"
+
+    Highest_marks = max(subjects.values())
+    Highest_subjects = [subject for subject, marks in subjects.items() if marks == Highest_marks]
+    Highest_subject = ", ".join(Highest_subjects)
     print("Highest marks obtained by ",name,"is:",Highest_marks,"in",Highest_subject)
-    Lowest_marks = min(subject1, subject2, subject3, subject4, subject5)
-    if Lowest_marks == subject1:
-        Lowest_subject = "Maths"
-    elif Lowest_marks == subject2:
-        Lowest_subject = "Science"
-    elif Lowest_marks == subject3:
-        Lowest_subject = "English"
-    elif Lowest_marks == subject4:
-        Lowest_subject = "History"
-    else:
-        Lowest_subject = "Geography"
+
+    Lowest_marks = min(subjects.values())
+    Lowest_subjects = [subject for subject, marks in subjects.items() if marks == Lowest_marks]
+    Lowest_subject = ", ".join(Lowest_subjects)
     print("Lowest marks obtained by ",name,"is:",Lowest_marks,"in",Lowest_subject)
+
     if Percentage>=90:
         print("Excelent score",name,"! You have achieved an A+ grade.")
     elif Percentage>=80:
